@@ -1,1 +1,3 @@
 #!/usr/bin/env bash
+# Title: TCP and UDP ports
+netstat -ltpnu
