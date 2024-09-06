@@ -1,3 +1,4 @@
-#!/bin/env bash
-# Display all IPs attached to the machine
-ip -4 addr show | grep -oP '(?<=inet\s)\d+(\.\d+){3}'
+#!/usr/bin/env bash
+# Script to show the attached IPs of the current machine
+# Install net tools for ifconfig command. "sudo apt-get install net-tools"
+ifconfig | grep -oP '(?<=inet\s)\d+(\.\d+){3}'
