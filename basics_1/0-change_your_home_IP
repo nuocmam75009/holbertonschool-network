@@ -1,0 +1,19 @@
+#!/bin/env bash
+# Change your home IP address to
+if [ "$EUID" -ne 0 ]; then
+    echo "Please run as root"
+    exit
+fi
+
+cp  /etc/hosts /etc/hosts.bak
+
+echo "127.0.0.2 localhost" > /etc/hosts
+
+echo "8.8.8.8 facebook.com" > /etc/hosts
+
+echo "Updated etc/hosts"
+
+cat /etc/hosts
+
+echo "Configuration successful."
+
